@@ -1,65 +1,68 @@
 # Product Requirements Document (PRD)
 
-| | |
+| Parameter | Spesifikasi |
 |---|---|
-| **Judul** | Portofolio Pendidikan Agama Islam |
-| **Pemilik** | Irvan Agus Saputra (NIM: 312410263, Kelas: I246A, Teknik Informatika UPB) |
-| **Versi** | 1.1 |
-| **Status** | Approved / Implemented |
-| **Tech Stack** | React 19, Next.js 15 (App Router), TypeScript, Tailwind CSS, Supabase (PostgreSQL) |
+| Judul Proyek | Portofolio Pendidikan Agama Islam |
+| Mahasiswa | Irvan Agus Saputra |
+| NIM / Kelas | 312410263 / I246A |
+| Program Studi | Teknik Informatika |
+| Perguruan Tinggi | Universitas Pelita Bangsa |
+| Versi Dokumen | 1.2 |
+| Status | Approved / Production Ready |
+| Tech Stack | React 19, Next.js 15 (App Router), TypeScript, Tailwind CSS, Supabase (PostgreSQL) |
 
 ---
 
-## 1. Latar Belakang dan Masalah
-- Tugas dan dokumentasi perkuliahan Pendidikan Agama sebelumnya tersebar dalam file lokal dan halaman web statis.
-- Dosen pengampu memerlukan media terpusat yang rapi, informatif, dan mudah diakses untuk mengevaluasi capaian belajar, tugas karya, dan refleksi.
-- Menjadi sarana implementasi nyata teknologi modern: Next.js App Router, database PostgreSQL via Supabase, dan desain web responsif standar industri.
+## 1. Latar Belakang dan Urgensi
+
+Pengumpulan tugas akademik dan dokumentasi pembelajaran Pendidikan Agama Islam kerap tersebar di berbagai media terpisah, seperti berkas lokal, aplikasi pesan instan, dan penyimpanan berkas mandiri. Kondisi tersebut menyulitkan evaluasi terpadu oleh dosen pengampu. 
+
+Proyek ini dibangun sebagai media terpusat berbasis web untuk mendokumentasikan pemahaman konseptual materi, tugas makalah, bukti kegiatan sosial, serta refleksi etika moral mahasiswa Teknik Informatika.
 
 ---
 
-## 2. Ruang Lingkup
+## 2. Batasan dan Ruang Lingkup
 
-### Termasuk dalam Ruang Lingkup
-- Database Supabase (PostgreSQL) untuk menyimpan data profil, topik, materi, karya, kegiatan, foto galeri, refleksi, referensi, dan pesan kontak.
-- Pengelolaan konten melalui Supabase Dashboard Table Editor.
-- Website frontend berbasis Next.js App Router dengan caching dan revalidasi 60 detik (`revalidate = 60`).
-- Keamanan berbasis Row Level Security (RLS) PostgreSQL.
+### Ruang Lingkup Masuk (In-Scope)
+1. Integrasi basis data PostgreSQL (Supabase) untuk penyimpanan data dinamis: profil, topik, materi, karya, kegiatan, galeri foto, refleksi, referensi, dan pesan masuk.
+2. Pengelolaan konten terpadu melalui panel administrasi web (`/admin`) dan konsol Supabase.
+3. Arsitektur frontend berbasis Next.js App Router dengan caching berjangka waktu (revalidasi 60 detik).
+4. Penegakan keamanan data melalui PostgreSQL Row Level Security (RLS).
+5. Desain antarmuka responsif ramah peramban mobile (360px) hingga layar desktop.
 
-### Bukan Tujuan (Out of Scope)
-- Panel admin mandiri (admin dashboard dikelola langsung via Supabase Table Editor).
-- Sistem autentikasi / login pengunjung (seluruh konten bersifat publik untuk edukasi).
-- Komentar pengunjung atau fitur media sosial.
+### Di Luar Ruang Lingkup (Out-of-Scope)
+1. Sistem autentikasi pengguna umum (seluruh materi bersifat terbuka untuk evaluasi akademik dan edukasi publik).
+2. Sistem interaksi media sosial (komentar pengunjung, likes, dsb.).
+3. Aplikasi mobile berbasis native (iOS/Android).
 
 ---
 
-## 3. Kebutuhan Fungsional
+## 3. Matriks Kebutuhan Fungsional
 
-| ID | Kebutuhan | Status |
+| ID | Modul | Kebutuhan Fungsional |
 |---|---|---|
-| F1 | Beranda dengan identitas, pengantar, dan daftar materi terbaru | Selesai |
-| F2 | Profil lengkap mahasiswa dan dosen pengampu | Selesai |
-| F3 | Daftar rangkuman materi perkuliahan dalam format kartu | Selesai |
-| F4 | Detail materi per pertemuan dengan slug dinamis (`/materi/[slug]`) | Selesai |
-| F5 | Halaman karya dan tugas (makalah, slide, video, diskusi) | Selesai |
-| F6 | Halaman kegiatan keagamaan dengan laporan dan foto dokumentasi | Selesai |
-| F7 | Galeri foto kegiatan dengan grid responsif | Selesai |
-| F8 | Halaman refleksi pribadi dan implementasi nilai | Selesai |
-| F9 | Halaman referensi daftar pustaka dan rujukan kitab suci | Selesai |
-| F10 | Halaman kontak dengan form terhubung ke database Supabase | Selesai |
-| F11 | Navigasi responsif (desktop menu & mobile toggle) | Selesai |
-| F12 | Halaman 404 custom bila slug/rute tidak ditemukan | Selesai |
-| F13 | Filter topik materi secara interaktif | Selesai |
+| F01 | Beranda | Menampilkan ringkasan identitas, motivasi akademik, dan artikel materi terbaru. |
+| F02 | Profil | Menampilkan biodata akademik, latar belakang, dan kata pengantar mahasiswa. |
+| F03 | Materi | Daftar seluruh materi pertemuan dengan filter topik interaktif. |
+| F04 | Detail Materi | Halaman pembahasan materi komprehensif berbasis slug URL dinamis (`/materi/[slug]`). |
+| F05 | Karya & Tugas | Menampilkan makalah, slide presentasi, dan materi audio-visual tugas akademik. |
+| F06 | Kegiatan | Dokumentasi terstruktur kegiatan keagamaan mencakup waktu, lokasi, dan laporan. |
+| F07 | Galeri | Penyajian dokumentasi visual foto kegiatan perkuliahan dan sosial. |
+| F08 | Refleksi | Dokumentasi perenungan nilai, kendala moralitas, dan rencana implementasi ke depan. |
+| F09 | Referensi | Daftar pustaka kitab suci, hadits, jurnal, dan rujukan ilmiah pendukung. |
+| F10 | Kontak | Formulir komunikasi pengiriman pesan yang langsung tersimpan di basis data. |
+| F11 | Kelola (CRUD) | Antarmuka pembuatan, pengubahan, dan penghapusan rekaman data aplikasi. |
+| F12 | Navigasi | Bilah navigasi adaptif untuk layar desktop dan menu dropdown untuk layar mobile. |
+| F13 | Halaman 404 | Penanganan kesalahan tautan rute yang tidak ditemukan secara terstandar. |
 
 ---
 
-## 4. Kebutuhan Non-Fungsional & Keamanan
+## 4. Standar Non-Fungsional dan Keamanan
 
-1. **Responsivitas:** Tampilan optimal mulai dari layar mobile (360px) hingga desktop tanpa horizontal scrollbar.
-2. **Keamanan Data (Database & API):**
-   - RLS (Row Level Security) aktif di seluruh 9 tabel.
-   - Hanya hak `SELECT` yang diberikan untuk data publik.
-   - Hak `INSERT` hanya untuk tabel `pesan` dengan pembatasan panjang karakter (pencegahan spam).
-   - Anon key publik hanya digunakan di client; `service_role` key tidak pernah diekspos ke repository atau client.
-   - File `.env.local` diabaikan secara ketat oleh `.gitignore`.
-3. **Performa & SEO:** SSG (Static Site Generation) dan ISR (Incremental Static Regeneration) dengan fallback aman.
-
+1. **Performa dan Keterbacaan:**
+   - Waktu muat awal optimal dengan pemanfaatan Static Site Generation (SSG) dan Incremental Static Regeneration (ISR).
+   - Tipografi terstruktur dengan perbandingan kontras warna sesuai standar aksesibilitas web (WCAG).
+2. **Keamanan Kredensial:**
+   - Kredensial basis data dan environment variables terisolasi secara ketat di `.env.local` dan diabaikan oleh Git.
+   - Hak akses basis data dikontrol via Row Level Security (RLS) di level PostgreSQL.
+   - Operasi penulisan publik dibatasi hanya pada penyampaian pesan dengan validasi panjang karakter input guna mencegah eksploitasi data.

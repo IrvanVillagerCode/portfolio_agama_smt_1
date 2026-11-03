@@ -1,11 +1,11 @@
 {
-  "name": "portofolio-pendidikan-agama",
+  "name": "portfolio_agam_smt_1",
   "version": "1.0.0",
   "private": true,
   "description": "Portofolio Pendidikan Agama Islam - Irvan Agus Saputra (Universitas Pelita Bangsa)",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node -e \"const fs=require('fs'); fs.rmSync('.next', {recursive:true, force:true});\" && next build",
     "start": "next start",
     "lint": "next lint"
   },
