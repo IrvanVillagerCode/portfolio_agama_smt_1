@@ -52,7 +52,10 @@ export const metadata: Metadata = {
     canonical: siteUrl,
   },
   verification: {
-    google: "google26f0653b3ddcb87f",
+    google: [
+      "QED8h_8Cysi0BQf3gCyzKWIF2G32itJLk7SeDD5pcUs",
+      "google26f0653b3ddcb87f",
+    ],
   },
   robots: {
     index: true,
@@ -138,6 +141,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="id" className={`${figtree.variable} ${newsreader.variable}`}>
       <head>
+        <meta
+          name="google-site-verification"
+          content="QED8h_8Cysi0BQf3gCyzKWIF2G32itJLk7SeDD5pcUs"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
