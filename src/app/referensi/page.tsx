@@ -1,7 +1,11 @@
 import { getReferensi } from "@/lib/queries";
 import { FiExternalLink } from "react-icons/fi";
 
-export const metadata = { title: "Referensi | Portofolio Pendidikan Agama" };
+export const metadata = {
+  title: "Daftar Referensi dan Literatur Pustaka",
+  description:
+    "Daftar pustaka kitab suci Al-Qur'an, hadits Nabi Muhammad SAW, buku ajar, dan jurnal ilmiah rujukan perkuliahan.",
+};
 export const revalidate = 60;
 
 export default async function ReferensiPage() {

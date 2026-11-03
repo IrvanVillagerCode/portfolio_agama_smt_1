@@ -2,7 +2,11 @@ import Image from "next/image";
 import { formatTanggal } from "@/lib/format";
 import { getFoto } from "@/lib/queries";
 
-export const metadata = { title: "Galeri | Portofolio Pendidikan Agama" };
+export const metadata = {
+  title: "Galeri Foto Dokumentasi Kegiatan",
+  description:
+    "Dokumentasi visual rangkaian kegiatan perkuliahan, kajian keagamaan, dan aktivitas sosial Pendidikan Agama Islam.",
+};
 export const revalidate = 60;
 
 export default async function GaleriPage() {

@@ -2,7 +2,11 @@ import Image from "next/image";
 import { formatTanggal } from "@/lib/format";
 import { getKegiatan } from "@/lib/queries";
 
-export const metadata = { title: "Kegiatan | Portofolio Pendidikan Agama" };
+export const metadata = {
+  title: "Laporan Kegiatan Sosial dan Keagamaan",
+  description:
+    "Dokumentasi dan laporan kegiatan keagamaan kampus, kajian rutin, dan aksi bakti sosial kemasyarakatan mahasiswa Universitas Pelita Bangsa.",
+};
 export const revalidate = 60;
 
 export default async function KegiatanPage() {

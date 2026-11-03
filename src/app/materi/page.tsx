@@ -1,7 +1,11 @@
 import MateriList from "@/components/MateriList";
 import { getDaftarMateri } from "@/lib/queries";
 
-export const metadata = { title: "Materi | Portofolio Pendidikan Agama" };
+export const metadata = {
+  title: "Materi Perkuliahan Pendidikan Agama Islam",
+  description:
+    "Kumpulan rangkuman materi perkuliahan Pendidikan Agama Islam semester 1 per pertemuan dengan dalil Al-Qur'an dan Hadits pendukung.",
+};
 export const revalidate = 60;
 
 export default async function MateriPage() {

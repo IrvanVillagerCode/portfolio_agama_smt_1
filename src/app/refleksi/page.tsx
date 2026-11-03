@@ -1,6 +1,10 @@
 import { getRefleksi } from "@/lib/queries";
 
-export const metadata = { title: "Refleksi | Portofolio Pendidikan Agama" };
+export const metadata = {
+  title: "Refleksi Diri dan Pembelajaran Nilai",
+  description:
+    "Perenungan spiritual, pengamalan nilai integritas, tantangan moralitas, dan tekad pengamalan dalam kehidupan sehari-hari.",
+};
 export const revalidate = 60;
 
 export default async function RefleksiPage() {

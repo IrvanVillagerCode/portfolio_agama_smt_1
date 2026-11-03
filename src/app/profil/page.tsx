@@ -3,7 +3,11 @@ import ProfileCard from "@/components/ProfileCard";
 import { HiAcademicCap, HiBookOpen } from "react-icons/hi2";
 import { FiAward } from "react-icons/fi";
 
-export const metadata = { title: "Profil | Portofolio Pendidikan Agama" };
+export const metadata = {
+  title: "Profil Mahasiswa: Irvan Agus Saputra",
+  description:
+    "Biodata akademik lengkap Irvan Agus Saputra (NIM 312410263, Kelas I246A), mahasiswa Teknik Informatika Universitas Pelita Bangsa.",
+};
 export const revalidate = 60;
 
 export default async function ProfilPage() {

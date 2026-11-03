@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDaftarMateri, getMateri } from "@/lib/queries";
@@ -8,6 +9,34 @@ export const revalidate = 60;
 export async function generateStaticParams() {
   const semua = await getDaftarMateri();
   return semua.map((m) => ({ slug: m.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const materi = await getMateri(slug);
+  if (!materi) return { title: "Materi Tidak Ditemukan" };
+
+  return {
+    title: `${materi.judul} (Pertemuan ${materi.pertemuan})`,
+    description: materi.ringkasan,
+    keywords: [
+      materi.judul,
+      materi.topik,
+      `Pertemuan ${materi.pertemuan}`,
+      "Pendidikan Agama Islam",
+      "Irvan Agus Saputra",
+      "Universitas Pelita Bangsa",
+    ],
+    openGraph: {
+      title: `${materi.judul} | Pendidikan Agama Islam UPB`,
+      description: materi.ringkasan,
+      type: "article",
+    },
+  };
 }
 
 export default async function DetailMateri({

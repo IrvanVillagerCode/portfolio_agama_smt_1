@@ -2,7 +2,11 @@ import { formatTanggal } from "@/lib/format";
 import { getKarya } from "@/lib/queries";
 import { FiExternalLink } from "react-icons/fi";
 
-export const metadata = { title: "Karya | Portofolio Pendidikan Agama" };
+export const metadata = {
+  title: "Karya dan Tugas Akademik",
+  description:
+    "Koleksi tugas makalah UTS, slide presentasi kelompok, dan tugas media Pendidikan Agama Islam Irvan Agus Saputra di Universitas Pelita Bangsa.",
+};
 export const revalidate = 60;
 
 const namaJenis = {

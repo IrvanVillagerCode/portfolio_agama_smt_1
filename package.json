@@ -5,7 +5,7 @@
   "description": "Portofolio Pendidikan Agama Islam - Irvan Agus Saputra (Universitas Pelita Bangsa)",
   "scripts": {
     "dev": "next dev",
-    "build": "node -e \"const fs=require('fs'); fs.rmSync('.next', {recursive:true, force:true});\" && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },

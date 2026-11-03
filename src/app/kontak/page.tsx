@@ -1,6 +1,10 @@
 import { kirimPesan } from "@/lib/actions";
 
-export const metadata = { title: "Kontak | Portofolio Pendidikan Agama" };
+export const metadata = {
+  title: "Kontak dan Saran Perkuliahan",
+  description:
+    "Formulir komunikasi dan penyampaian pesan kepada mahasiswa dan dosen pengampu mata kuliah Pendidikan Agama Islam.",
+};
 
 const pesanStatus: Record<string, { teks: string; warna: string }> = {
   ok: {
