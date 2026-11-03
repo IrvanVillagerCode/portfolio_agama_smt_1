@@ -99,3 +99,28 @@ body {
     inset 0 1px 1.5px rgba(255, 255, 255, 0.5);
   transform: translateY(-2px);
 }
+
+/* Smooth Page Route Transition (Non-blocking) */
+.page-transition {
+  animation: pageFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pageFadeIn {
+  0% {
+    opacity: 0.2;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+

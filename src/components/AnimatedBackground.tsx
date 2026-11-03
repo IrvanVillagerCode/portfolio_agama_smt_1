@@ -76,7 +76,7 @@ export default function AnimatedBackground() {
   return (
     <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
       {/* Gelombang Transisi Halus Saat Rute Berubah */}
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         <motion.div
           key={pathname}
           initial={{ opacity: 0.4, scale: 0.92 }}
