@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-ink: #12261f;
+  --color-paper: #f2f7f4;
+  --color-moss: #1f5a47;
+  --color-gold: #a9792b;
+  --color-mist: #dce6e0;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-figtree), system-ui, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* ==============================================================================
+   LIQUID GLASS DESIGN SYSTEM
+   ============================================================================== */
+
+/* Base Liquid Glass with Specular Light Reflection */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 
+    0 10px 32px 0 rgba(31, 90, 71, 0.07),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.03);
+}
+
+/* Interactive Liquid Glass Card */
+.liquid-glass-card {
+  background: rgba(255, 255, 255, 0.52);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    0 8px 30px rgba(18, 38, 31, 0.05),
+    inset 0 1px 2px rgba(255, 255, 255, 0.95);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-card:hover {
+  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(31, 90, 71, 0.35);
+  box-shadow: 
+    0 20px 45px rgba(31, 90, 71, 0.12),
+    inset 0 1px 2px rgba(255, 255, 255, 1);
+  transform: translateY(-5px);
+}
+
+/* Dark Moss Liquid Glass for Hero / Badges / Accents */
+.liquid-glass-moss {
+  background: rgba(31, 90, 71, 0.88);
+  backdrop-filter: blur(20px) saturate(190%);
+  -webkit-backdrop-filter: blur(20px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 
+    0 16px 40px rgba(18, 38, 31, 0.25),
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.45);
+}
+
+/* Glass Pill for Tags & Badges */
+.liquid-glass-pill {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+/* Glass Button */
+.liquid-glass-btn {
+  background: linear-gradient(135deg, rgba(31, 90, 71, 0.92), rgba(22, 65, 51, 0.95));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 24px rgba(31, 90, 71, 0.28),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  transition: all 0.25s ease;
+}
+
+.liquid-glass-btn:hover {
+  background: linear-gradient(135deg, rgba(31, 90, 71, 1), rgba(24, 71, 56, 1));
+  box-shadow: 
+    0 12px 30px rgba(31, 90, 71, 0.38),
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
